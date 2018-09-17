@@ -1,3 +1,7 @@
+variable "aws_region" {}
+
+variable "aws_profile" {}
+
 variable "name" {
   type        = "string"
   description = "VPC Name"
