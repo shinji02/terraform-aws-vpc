@@ -123,7 +123,7 @@ resource "aws_nat_gateway" "nat" {
 resource "aws_route_table" "public" {
   vpc_id = "${aws_vpc.vpc.id}"
   tags   = "${merge(var.tags,
-    map("Name", format("%s-public-%s", var.name, substr(element(var.azs, 0), 0, length(element(var.azs, 0)) -1))))}"
+    map("Name", format("%s-public", var.name)))}"
 }
 
 # Create routes for public route table
