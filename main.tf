@@ -65,7 +65,7 @@ resource "aws_subnet" "public" {
       "Name" = format("%s-public-%s", var.name, each.key)
     },
     {
-      "TerraformId" = format("%s-private-%s", var.name, each.key)
+      "TerraformId" = format("%s-public-%s", var.name, each.key)
     },
     {
       "Tier" = "public"
