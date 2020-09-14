@@ -1,39 +1,36 @@
-variable "aws_region" {}
+variable "aws_region" {
+}
 
-variable "aws_profile" {}
+variable "aws_profile" {
+}
 
 variable "name" {
-  type        = "string"
+  type        = string
   description = "VPC Name"
 }
 
 variable "azs" {
-  type        = "list"
+  type        = list(string)
   description = "VPC AZs"
 }
 
 variable "cidr" {
-  type        = "string"
+  type        = string
   description = "VPC Cidr Block"
 }
 
 variable "public_key" {
-  type        = "string"
+  type        = string
   description = "EC2 Public key used to provision servers"
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map(string)
   default     = {}
   description = "Default set of tags to apply to VPC resources"
 }
 
 ### Boolean switch
-
-variable "enable_managed_nat" {
-  default     = false
-  description = "If true, Managed NAT Gateways will be used, otherwise EC2 NAT instances will be spawn up"
-}
 
 variable "enable_bastion_host" {
   default     = true
